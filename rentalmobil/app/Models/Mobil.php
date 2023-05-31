@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Mobil extends Model
 {
     use HasFactory;
+
+    protected $table = "mobils";
+
+    protected $filltable = [
+        'nama_mobil', 'CC', 'merk_id', 
+        'tahun_mobil', 'warna', 'tipe_mobil_id',
+        'foto', 'nomor_polisi'
+    ];
 }
