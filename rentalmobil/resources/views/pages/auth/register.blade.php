@@ -26,8 +26,8 @@
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                    @csrf
-                                    <form action="" method="">
+                                    <form action="/register/proses" method="POST">
+                                        @csrf
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputName" type="text"
                                                 placeholder="Fullname" name="name" />
@@ -62,8 +62,7 @@
                                 </div>
                                 <div class="card-footer text-center py-3">
                                     <div class="small">
-                                        <a href="/login">Sudah punya akun ? login
-                                            sekarang</a>
+                                        <a href="/login">Sudah punya akun ? login sekarang</a>
                                     </div>
                                 </div>
                             </div>

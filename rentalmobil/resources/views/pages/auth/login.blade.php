@@ -26,7 +26,9 @@
                                     </h3>
                                 </div>
                                 <div class="card-body">
+                                   
                                     <form action="/login/proses" method="POST">
+                                        @csrf
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputEmail" type="email"
                                                 placeholder="name@example.com" name="email" />

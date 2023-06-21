@@ -24,6 +24,8 @@ Route:: get('/', function(){
     return view('index');
 }); 
 
+Route::middleware(['auth'])->group(function(){
+
 Route::get('/mobil',[MobilController::class,'index']);
 Route::get('/mobil/create',[MobilController::class,'create']);
 Route::post('/mobil/simpanData',[MobilController::class,'store']);
@@ -47,8 +49,13 @@ Route::get('/tipe_mobil/edit/{id}', [TipeMobilController::class, 'edit']); //edi
 Route::post('/tipe_mobil/update/{id}', [TipeMobilController::class, 'update']);
 Route::get('/tipe_mobil/delete/{id}', [TipeMobilController::class, 'delete']);
 
+Route::get('/logout', [Auth\loginController::class, 'logout']);
+});
+
+
+
 //route untuk authentikasi dan registrasi
-Route::get('/login',[Auth\LoginController::class, 'index']);
-Route::post('/login/proses',[Auth\Controller::class,'login'])->name('login');
-Route::get('/register',[Auth\Controller::class,'index']);
-Route::post('/register/proses', [Auth\Controller::class, 'register']);
+Route::get('/login',[Auth\LoginController::class, 'index'])->name('login');
+Route::post('/login/proses',[Auth\LoginController::class,'login']);
+Route::get('/register',[Auth\RegisterController::class,'index']);
+Route::post('/register/proses', [Auth\RegisterController::class, 'register']);
