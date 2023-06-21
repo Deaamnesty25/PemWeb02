@@ -11,8 +11,8 @@ class Mobil extends Model
 
     protected $table = "mobils";
 
-    protected $filltable = [
-        'nama_mobil', 'CC', 'merk_id', 
+    protected $fillable = [
+        'nama_mobil', 'cc', 'merk_id', 
         'tahun_mobil', 'warna', 'tipe_mobil_id',
         'foto', 'nomor_polisi'
     ];

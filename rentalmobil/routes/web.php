@@ -27,6 +27,9 @@ Route:: get('/', function(){
 Route::get('/mobil',[MobilController::class,'index']);
 Route::get('/mobil/create',[MobilController::class,'create']);
 Route::post('/mobil/simpanData',[MobilController::class,'store']);
+Route::get('/mobil/edit/{id}',[MobilController::class,'edit']);
+Route::post('/mobil/update/{id}', [MobilController::class, 'update']);
+Route::get('/mobil/delete/{id}',[MobilController::class,'delete']);
 
 Route::get('/merk',[MerkController::class,'index']);
 Route::get('/merk/create',[MerkController::class,'create']);
@@ -43,3 +46,9 @@ Route::post('/tipe_mobil/simpan-data', [TipeMobilController::class, 'store']);
 Route::get('/tipe_mobil/edit/{id}', [TipeMobilController::class, 'edit']); //edit data
 Route::post('/tipe_mobil/update/{id}', [TipeMobilController::class, 'update']);
 Route::get('/tipe_mobil/delete/{id}', [TipeMobilController::class, 'delete']);
+
+//route untuk authentikasi dan registrasi
+Route::get('/login',[Auth\LoginController::class, 'index']);
+Route::post('/login/proses',[Auth\Controller::class,'login'])->name('login');
+Route::get('/register',[Auth\Controller::class,'index']);
+Route::post('/register/proses', [Auth\Controller::class, 'register']);
